@@ -65,13 +65,13 @@ Note: The full code details and implementation can be found in the data_preproce
 
 ### Step 4: Data Merging
 Source: data_merging.ipynb
-
-1. Read the initial datasets ('ores_predictions.csv', 'us_cities_by_state_SEPT.2023.csv', and 'US States by Region - US Census Bureau.xlsx') containing information about ORES predictions, US cities, and US state divisions.
-2. Data Integration: Combine the relevant data from the 'us_cities_by_state_SEPT.2023.csv' and 'ores_predictions.csv' datasets, utilizing the common key, and create a unified dataframe.
-3. Merge the unified dataframe with the 'US States by Region - US Census Bureau.xlsx' dataset based on the shared key, resulting in a comprehensive dataset encompassing US state regional divisions, populations, and Wikipedia article details.
-4. Select only the necessary columns, including 'State', 'DIVISION', 'article_title', 'Last_Revision_ID', and 'Prediction', for the final dataset to ensure relevance and coherence.
-5. Rename the selected columns to enhance the readability and interpretability of the final dataset.
-6. Save the processed and refined dataset as a CSV file named 'resulting_data.csv', containing a consolidated view of US state divisions, regional information, and associated Wikipedia article details.
+1. Data Reading: Importing three datasets, namely 'cleaned_data.csv', 'us_cities_by_state_SEPT.2023.csv', and 'US States by Region - US Census Bureau.xlsx', containing information about ORES predictions, US cities, and US state divisions, respectively.
+2. Removal of Duplicates: Removing duplicate rows from the 'cleaned_data.csv' and 'us_cities_by_state_SEPT.2023.csv' datasets, based on the 'title' and 'page_title' columns.
+3. Data Preprocessing: Standardizing and cleaning data by extracting necessary columns, converting strings to lowercase, and removing leading special characters for better data uniformity.
+4. Data Merging: Merging the 'ores_df' and 'cities_df' based on 'title' and 'page_title' columns to create a comprehensive dataframe with combined information.
+5. Integration with Regional Data: Combining the merged dataframe with the 'regions_df' based on the 'state' column, enabling a holistic view of US states, their regions, and corresponding Wikipedia article details.
+6. Population Data Merge: Merging the 'final_df' with the 'population_df' based on the 'state' and 'Geographic Area' columns, incorporating population information into the comprehensive dataset.
+7. Saving the Merged Dataset: Exporting the merged dataframe to 'wp_scored_city_articles_by_state.csv' to create a consolidated dataset containing US state divisions, regional details, population, Wikipedia article information, and ORES predictions.
 Note: The full code details and implementation can be found in the data_merging.ipynb notebook.
 
 
@@ -177,6 +177,37 @@ A snippet of the data from the file 'US States by Region - US Census Bureau.xlsx
 | Northeast        | New England         | Connecticut    |
 | Northeast        | New England         | Maine          |
 | ...              | ...                 | ...            |
+
+
+## wp_scored_city_articles_by_state.csv
+Wikipedia Scored City Articles by State Dataset 
+
+This dataset presents information about Wikipedia articles related to cities, along with their respective scores and additional data points. The file 'wp_scored_city_articles_by_state.csv' includes the following columns:
+
+- State: The state to which the city belongs.
+- Regional_Division: The regional division where the city is located.
+- Article_Title: The title of the Wikipedia article for the city.
+- Revision_ID: The ID of the last revision made to the Wikipedia article.
+- Article_Quality: The quality score assigned to the Wikipedia article.
+- Population: The population of the corresponding geographic area.
+
+### Dataset Description
+The dataset provides insights into Wikipedia articles related to cities, including their quality scores, geographic area, and population. It aims to offer a comprehensive overview of various cities in different states and their respective Wikipedia article quality.
+
+### Usage
+You can utilize this dataset to analyze Wikipedia articles related to cities and their quality scores. The Article_Quality column can be particularly useful for understanding the quality assessment of the Wikipedia articles, while the Population column can provide context about the population of the corresponding geographic areas.
+
+### Example
+
+A snippet of the data from the file 'wp_scored_city_articles_by_state.csv' is provided below:
+
+| State   | Regional_Division    | Article_Title          | Revision_ID | Article_Quality | Geographic_Area | Population |
+| ------- | -------------------- | ---------------------- | ----------- | --------------- | --------------- | ---------- |
+| Alabama | East South Central   | Abbeville, Alabama     | 1171163550  | C               | alabama         | 5074296    |
+| Alabama | East South Central   | Adamsville, Alabama    | 1177621427  | C               | alabama         | 5074296    |
+| ...     | ...                  | ...                    | ...         | ...             | ...             | ...        |
+
+Feel free to explore the dataset and use it for various analytical purposes related to Wikipedia articles on cities and their respective states.
 
 
 
