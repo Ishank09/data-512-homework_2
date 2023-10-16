@@ -179,3 +179,23 @@ A snippet of the data from the file 'US States by Region - US Census Bureau.xlsx
 | ...              | ...                 | ...            |
 
 
+
+# ores_prediction.ipynb Problems in fetching.
+
+Certainly! Initially, I encountered numerous failures while making API requests to ORES for obtaining article quality scores. These failures were primarily due to HTTP errors such as 502, 504, and 429 (Too Many Requests). To counter these issues and ensure the reliability of the data retrieval process, I implemented a retry mechanism within the request_ores_score_per_article function.
+
+The retry mechanism was designed to allow the function to make several attempts in case of a failed request. It was implemented using a while loop that tracked the number of retries attempted. Each time a failure occurred, the function waited for an increasing duration before making the next attempt. The waiting time followed an exponential backoff strategy, starting with a base wait time of 1 second and doubling with each subsequent retry.
+
+During the execution, the code provided detailed error messages, including the specific HTTP error that occurred along with the corresponding status code. It also printed informative messages about the failed attempts, specifying which articles encountered issues while retrieving scores from the API.
+
+Despite the retry mechanism, some failures persisted due to intermittent issues with the API. However, the implemented retries significantly reduced the impact of these failures, ensuring a more robust and reliable data retrieval process.
+
+The logs indicated that the function attempted several retries for each encountered failure, ultimately enhancing the overall resilience of the data retrieval system.
+
+Among the encountered failures, three specific titles consistently resulted in API failures, namely "Jennings, Missouri," "Jefferson Township, Greene County, Pennsylvania," and "Alma, Wisconsin." 
+
+Due to the persistent API failures for the specific titles "Jennings, Missouri," "Jefferson Township, Greene County, Pennsylvania," and "Alma, Wisconsin," it was necessary to manually add these titles to the list for subsequent data retrieval attempts. By adding these titles manually, it was possible to ensure that the article quality scores were obtained, despite the challenges presented by these particular entries. This manual intervention enabled the comprehensive collection of data for the overall analysis, ensuring that the information for these specific titles was included in the final dataset for further examination and processing.
+
+
+
+
