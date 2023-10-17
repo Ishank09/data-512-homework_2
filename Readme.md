@@ -26,7 +26,8 @@
       + [ores_predictions.csv](#ores_predictionscsv)
       + [US States by Region - US Census Bureau.xlsx](#us-states-by-region-us-census-bureauxlsx)
       + [wp_scored_city_articles_by_state.csv](#wp_scored_city_articles_by_statecsv)
-- [ores_prediction.ipynb Problems in fetching.](#ores_predictionipynb-problems-in-fetching)
+- [Research Implications](#research-implications)
+   * [ores_prediction.ipynb Problems in fetching.](#ores_predictionipynb-problems-in-fetching)
 
 <!-- TOC end -->
 
@@ -374,9 +375,10 @@ Feel free to explore the dataset and use it for various analytical purposes rela
 
 
 
-<!-- TOC --><a name="ores_predictionipynb-problems-in-fetching"></a>
+<!-- TOC --><a name="research-implications"></a>
 # Research Implications
 
+<!-- TOC --><a name="ores_predictionipynb-problems-in-fetching"></a>
 ## ores_prediction.ipynb Problems in fetching.
 
 Certainly! Initially, I encountered numerous failures while making API requests to ORES for obtaining article quality scores. These failures were primarily due to HTTP errors such as 502, 504, and 429 (Too Many Requests). To counter these issues and ensure the reliability of the data retrieval process, I implemented a retry mechanism within the request_ores_score_per_article function.
