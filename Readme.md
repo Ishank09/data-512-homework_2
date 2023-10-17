@@ -74,10 +74,113 @@ Source: data_merging.ipynb
 7. Saving the Merged Dataset: Exporting the merged dataframe to 'wp_scored_city_articles_by_state.csv' to create a consolidated dataset containing US state divisions, regional details, population, Wikipedia article information, and ORES predictions.
 Note: The full code details and implementation can be found in the data_merging.ipynb notebook.
 
+### Step 5: Analysis
+Source: data_analysis.ipynb
+1. Import the necessary libraries such as pandas and numpy.
+2. Load the dataset from 'wp_scored_city_articles_by_state.csv'.
+3. Calculate the total articles per population (articles per capita) by state. This includes reading the data, cleaning it, and performing the necessary calculations.
+4. Calculate the total articles per capita by regional division.
+5. Calculate high-quality articles per population (articles tagged with 'FA' or 'GA') both by state and by regional division.
+6. For each analysis subsection, display the top 10 and bottom 10 US states based on coverage and high-quality articles per capita.
+7. Display the census divisions ranked by total coverage and high-quality coverage.
 
 
 
 
+## Results
+### Section 4a: Total Articles per Population by State
+The top 5 US states by articles per capita are:
+	1. Vermont: 0.000091
+	2. Maine: 0.000202
+	3. Iowa: 0.000012
+	4. Alaska: 0.000164
+	5. Pennsylvania: 0.000012
+### Section 4b: High-Quality Articles per Population
+By State (Top 5):
+
+	1. Vermont: 0.000010
+	2. Wyoming: 0.000042
+	3. Montana: 0.000003
+	4. Pennsylvania: 0.000024
+	5. Missouri: 0.000004
+
+By Regional Division (Top 5):
+
+	1. Middle Atlantic: 0.000015
+	2. West North Central: 0.000016
+	3. New England: 0.000044
+	4. East South Central: 0.000017
+	5. East North Central: 0.000013
+
+### Section 5: Results
+### Top 10 US states by coverage:
+	1. Vermont
+	2. Maine
+	3. Iowa
+	4. Alaska
+	5. Pennsylvania
+	6. Michigan
+	7. Wyoming
+	8. Arkansas
+	9. Missouri
+	10. Minnesota
+### Bottom 10 US states by coverage:
+	1. Nevada
+	2. California
+	3. Arizona
+	4. Virginia
+	5. Florida
+	6. Oklahoma
+	7. Kansas
+	8. Maryland
+	9. Wisconsin
+	10. Washington
+
+### Top 10 US states by high quality:
+	1. Vermont
+	2. Wyoming
+	3. Montana
+	4. Pennsylvania
+	5. Missouri
+	6. Alaska
+	7. Oregon
+	8. Iowa
+	9. Maine
+	10. Minnesota
+
+### Bottom 10 US states by high quality:
+	1. Virginia
+	2. Nevada
+	3. Arizona
+	4. California
+	5. Florida
+	6. Maryland
+	7. Kansas
+	8. Oklahoma
+	9. Massachusetts
+	10. Louisiana
+
+### Census divisions by total coverage:
+	1. Middle Atlantic
+	2. West North Central
+	3. New England
+	4. East North Central
+	5. East South Central
+	6. West South Central
+	7. Mountain
+	8. Pacific
+	9. South Atlantic
+### Census divisions by high quality coverage:
+	1. Middle Atlantic
+	2. West North Central
+	3. New England
+	4. East South Central
+	5. East North Central
+	6. West South Central
+	7. Mountain
+	8. Pacific
+	9. South Atlantic
+These results provide insights into the distribution of Wikipedia articles and their quality across different US states and census divisions
 
 
 ## Data:
