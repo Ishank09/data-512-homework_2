@@ -29,6 +29,9 @@
       + [US Population Estimates by Geographic Area - 2020 to 2022.xlsx](#us-population-estimates-by-geographic-area-2020-to-2022xlsx)
       + [US States by Region - US Census Bureau.xlsx](#us-states-by-region-us-census-bureauxlsx)
       + [wp_scored_city_articles_by_state.csv](#wp_scored_city_articles_by_statecsv)
+      + [cleaned_data.csv](#cleaned_datacsv)
+      + [ores_predictions_with_headers.csv](#ores_predictions_with_headerscsv)
+      + [resulting_data.csv](#resulting_datacsv)
 - [Research Implications](#research-implications)
    * [Problems in fetching API requests: ores_prediction.ipynb](#problems-in-fetching-api-requests-ores_predictionipynb)
    * [Problem with data and preprocessing it: data_preprocessing.ipynb](#problem-with-data-and-preprocessing-it-data_preprocessingipynb)
@@ -424,6 +427,95 @@ A snippet of the data from the file 'wp_scored_city_articles_by_state.csv' is pr
 | ...     | ...                  | ...                    | ...         | ...             | ...             | ...        |
 
 Feel free to explore the dataset and use it for various analytical purposes related to Wikipedia articles on cities and their respective states.
+
+
+<!-- TOC --><a name="cleaned_datacsv"></a>
+### cleaned_data.csv
+Cleaned Data from Wikipedia Articles
+This dataset, named 'cleaned_data.csv', provides information about Wikipedia articles related to various cities. It includes the following columns:
+
+- title: The title of the Wikipedia article.
+- rev_id: The revision ID of the Wikipedia article.
+- prediction: The predicted quality of the Wikipedia article.
+
+Dataset Description
+The dataset contains cleaned and preprocessed data derived from the execution of the 'data_preprocessing.ipynb' script. The preprocessing steps applied to the data can be found in the relevant section of the 'data_preprocessing.ipynb' notebook. It includes data related to different Wikipedia articles on cities, along with their respective revision IDs and predicted article qualities.
+
+Usage
+You can utilize this dataset to analyze and study the predicted quality of various Wikipedia articles related to cities. The prediction column provides insights into the predicted quality of each Wikipedia article, which can be used to assess the reliability and credibility of the information presented in these articles.
+
+Example
+A snippet of the data from the file 'cleaned_data.csv' is provided below:
+
+| title               | rev_id      | prediction |
+| ------------------- | ----------- | ---------- |
+| Abbeville, Alabama  | 1171163550  | C          |
+| Adamsville, Alabama | 1177621427  | C          |
+| ...                 | ...         | ...        |
+
+Feel free to explore the dataset and use it for various analytical purposes related to Wikipedia articles on different cities.
+
+Note on Preprocessing
+This dataset is generated after executing the 'data_preprocessing.ipynb' script, which includes specific preprocessing steps. For further details on the preprocessing steps applied to the data, please refer to the relevant section in the 'data_preprocessing.ipynb' notebook.
+
+
+<!-- TOC --><a name="ores_predictions_with_headerscsv"></a>
+### ores_predictions_with_headers.csv
+ORES Predictions Dataset with Headers
+This dataset, named 'ores_predictions_with_headers.csv', is similar to 'ores_predictions.csv' but includes headers as well. It provides information about predictions obtained using the ORES (Objective Revision Evaluation Service) API for various Wikipedia articles. The file includes the following columns:
+
+- title: The title of the Wikipedia article.
+- rev_id: The ID of the last revision made to the Wikipedia article.
+- prediction: The predicted ORES score for the respective Wikipedia article.
+
+Dataset Description
+The dataset presents the ORES scores predicted for different Wikipedia articles, similar to the 'ores_predictions.csv' dataset. However, this dataset includes headers for the columns, providing a more structured format for easier interpretation and analysis of the data.
+
+Usage
+You can use this dataset to analyze the predicted ORES scores for various Wikipedia articles, just like the 'ores_predictions.csv' dataset. The inclusion of headers allows for easier data handling and manipulation, making it more convenient to work with the dataset for analytical purposes.
+
+Example
+A snippet of the data from the file 'ores_predictions_with_headers.csv' is provided below:
+
+| title               | rev_id      | prediction |
+| ------------------- | ----------- | ---------- |
+| Abbeville, Alabama  | 1171163550  | C          |
+| Adamsville, Alabama | 1177621427  | C          |
+| ...                 | ...         | ...        |
+
+
+<!-- TOC --><a name="resulting_datacsv"></a>
+### resulting_data.csv
+Merged Dataset with Comprehensive Information
+We saved the resulting dataset to a CSV file named 'resulting_data.csv'. This file contains a comprehensive amalgamation of essential information from the initial datasets, providing valuable insights into US state regional divisions, populations, Wikipedia article details, and ORES predictions.
+
+The 'resulting_data.csv' dataset includes the following columns:
+
+- state: The state to which the article belongs.
+- regional_division: The regional division in which the state is located.
+- article_title: The title of the Wikipedia article.
+- revision_id: The ID of the last revision made to the Wikipedia article.
+- article_quality: The quality assessment of the Wikipedia article.
+
+Dataset Description
+The dataset offers a comprehensive view of US state regional divisions, populations, Wikipedia article details, and ORES predictions, all merged into one dataset. It serves as a valuable resource for conducting in-depth analyses and studies related to various aspects of the United States, its states, and Wikipedia articles on cities within these states.
+
+Usage
+You can use this dataset to perform comprehensive analyses on various facets of the United States, including its regional divisions, populations, and Wikipedia article details. The integration of multiple datasets into a single comprehensive file enables a more holistic approach to data analysis and interpretation.
+
+Example
+A snippet of the data from the file 'resulting_data.csv' is provided below:
+
+| state   | regional_division    | article_title         | revision_id | article_quality |
+| ------- | -------------------- | --------------------- | ----------- | --------------- |
+| alabama | East South Central   | Abbeville, Alabama    | 1171163550  | C               |
+| alabama | East South Central   | Adamsville, Alabama   | 1177621427  | C               |
+| ...     | ...                  | ...                   | ...         | ...             |
+
+Feel free to explore the dataset and utilize it for conducting various analytical studies related to the United States, its regional divisions, and Wikipedia articles on cities within these regions.
+
+Data Generation
+The 'resulting_data.csv' dataset is generated in the 'data_merge.ipynb' script as an intermediate file, which combines and merges data from various initial datasets. For more information, please goto specified file.
 
 
 
