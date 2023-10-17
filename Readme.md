@@ -4,6 +4,7 @@
    * [Introduction](#introduction)
    * [Prerequisites](#prerequisites)
    * [Folder Structure](#folder-structure)
+   * [Reproducing analysis and data](#reproducing-analysis-and-data)
    * [Steps and files (1-1 mapping)](#steps-and-files-1-1-mapping)
       + [Step 1: Data Extraction from Wikipedia API](#step-1-data-extraction-from-wikipedia-api)
       + [Step 2: ORES API Prediction](#step-2-ores-api-prediction)
@@ -65,6 +66,26 @@ This project is organized with the following folder structure:
 - **requirement.txt:** This file lists all the Python packages and their corresponding versions required to run the project. It enables the easy setup of the development environment with the necessary dependencies.
 
 
+
+<!-- TOC --><a name="reproducing-analysis-and-data"></a>
+## Reproducing analysis and data
+Reproducing the Data Extraction and Analysis Pipeline
+
+1. Clone the Repository: Begin by cloning the repository from the provided source.
+
+2. Navigate to Source Folder: Enter the 'src' folder within the repository to access the notebooks.
+
+3. Data Extraction: Execute data_extraction.ipynb to fetch article titles and revisions from Wikipedia API. The program loads data from ../data/us_cities_by_state_SEPT.2023.csv and outputs ../data/wiki_page_info.csv.
+
+4. ORES Prediction: Run ores_prediction.ipynb to get quality predictions using the ORES API. It uses ../data/wiki_page_info.csv and creates ../data/ores_predictions.csv.
+
+5. Data Preprocessing: In data_preprocessing.ipynb, clean data and save it as ../data/cleaned_data.csv.
+
+6. Data Merging: Execute data_merging.ipynb to merge datasets, including cleaned data, US cities, state divisions, and population. The result is saved as ../data/wp_scored_city_articles_by_state.csv.
+
+7. Data Analysis: Use data_analysis.ipynb to perform analysis on the merged dataset. This notebook doesn't create new CSV files but displays analysis results.
+
+These steps allow you to reproduce the entire pipeline for data extraction and analysis, providing insights into Wikipedia articles' coverage and quality per capita for US states and regions.
 
 
 <!-- TOC --><a name="steps-and-files-1-1-mapping"></a>
