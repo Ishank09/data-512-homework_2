@@ -378,6 +378,22 @@ Feel free to explore the dataset and use it for various analytical purposes rela
 <!-- TOC --><a name="research-implications"></a>
 # Research Implications
 
+According to my analysis, South Dakota has the most high-quality articles published per person. While South Dakota is not a part of New England, the region with the highest quality articles produced per person is. I was especially surprised by this. Additionally, South Dakota had the highest number of articles per person, which is consistent with having the highest-quality articles. However, it is also surprising because even though they had the highest number, they also had the best quality.
+
+What biases did you expect to find in the data (before you started working with it), and why?
+Because of the way Wikipedia creates its content, I anticipated biases before working with the data. Due to the fact that Wikipedia is created and edited by volunteers, biases based on their personal interests, areas of expertise, and viewpoints may manifest. Underrepresentation of certain topics or geographic areas, systemic bias based on gender, ethnicity, and cultural perspectives, and uneven coverage of notable versus unnotable subjects are just a few examples of bias-causing factors.
+
+
+What do your findings possibly say about the (English) Wikipedia as a source of data?
+
+Wikipedia is a useful but unreliable source of information. Its accuracy and comprehensiveness can vary greatly between different subjects. Its suitability for some research questions or applications may be constrained by the biases observed.
+
+What (possible) sources of bias did you find while processing and analyzing your data?
+
+During my analysis, I found that some of the regions had more coverage than the others.
+
+
+
 <!-- TOC --><a name="ores_predictionipynb-problems-in-fetching"></a>
 ## ores_prediction.ipynb Problems in fetching.
 
