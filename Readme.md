@@ -25,6 +25,7 @@
       + [us_cities_by_state_SEPT.2023.csv'](#us_cities_by_state_sept2023csv)
       + [wiki_page_info.csv](#wiki_page_infocsv)
       + [ores_predictions.csv](#ores_predictionscsv)
+      + [US Population Estimates by Geographic Area - 2020 to 2022.xlsx](#us-population-estimates-by-geographic-area-2020-to-2022xlsx)
       + [US States by Region - US Census Bureau.xlsx](#us-states-by-region-us-census-bureauxlsx)
       + [wp_scored_city_articles_by_state.csv](#wp_scored_city_articles_by_statecsv)
 - [Research Implications](#research-implications)
@@ -335,6 +336,34 @@ A snippet of the data from the file 'ores_predictions.csv' is provided below:
 | Abbeville, Alabama  | 1171163550       | FA         |
 | Adamsville, Alabama | 1177621427       | GA         |
 | ...                 | ...              | ...        |
+
+<!-- TOC --><a name="us-population-estimates-by-geographic-area-2020-to-2022xlsx"></a>
+### US Population Estimates by Geographic Area - 2020 to 2022.xlsx
+
+This dataset provides information about the estimated population of the United States and its various geographic areas from 2020 to 2022. The file 'NST-EST2022-POP.xlsx' includes the following columns:
+
+- Geographic_Area: The geographic area, ranging from the United States as a whole to individual states.
+- April 1, 2020 Estimates Base: The estimated population base as of April 1, 2020.
+- Population Estimate (as of July 1) for the years 2020, 2021, and 2022.
+
+Dataset Description
+The dataset offers insights into the estimated population of the United States and its various geographic areas, including each state. It provides comprehensive data on population estimates for different years, allowing for an understanding of population dynamics over time.
+
+Usage
+You can use this dataset to analyze and study the population trends and changes in the United States and its various geographic areas. The population estimates for each year can be used to understand the growth or decline of populations in different states over the specified time period.
+
+Data Source
+The dataset was downloaded from the official website of the United States Census Bureau at [https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html](https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html). The original data was manually preprocessed to remove header and footer information, resulting in the dataset provided here.
+
+Example
+
+A snippet of the data from the file 'NST-EST2022-POP.xlsx' is provided below:
+
+| Geographic_Area  | April 1, 2020 Estimates Base | Population Estimate (2020) | Population Estimate (2021) | Population Estimate (2022) |
+| ---------------- | --------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| United States    | 331,449,520                 | 331,511,512                | 332,031,554                | 333,287,557                |
+| Northeast        | 57,609,156                  | 57,448,898                 | 57,259,257                 | 57,040,406                 |
+| ...              | ...                         | ...                        | ...                        | ...                        |
 
 
 
