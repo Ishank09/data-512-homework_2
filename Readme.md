@@ -28,7 +28,8 @@
       + [US States by Region - US Census Bureau.xlsx](#us-states-by-region-us-census-bureauxlsx)
       + [wp_scored_city_articles_by_state.csv](#wp_scored_city_articles_by_statecsv)
 - [Research Implications](#research-implications)
-   * [ores_prediction.ipynb Problems in fetching.](#ores_predictionipynb-problems-in-fetching)
+   * [Problems in fetching API requests: ores_prediction.ipynb](#problems-in-fetching-api-requests-ores_predictionipynb)
+   * [Problem with data and preprocessing it: data_preprocessing.ipynb](#problem-with-data-and-preprocessing-it-data_preprocessingipynb)
 
 <!-- TOC end -->
 
@@ -415,10 +416,10 @@ During my analysis, I found that some of the regions had more coverage than the 
 
 
 
-<!-- TOC --><a name="ores_predictionipynb-problems-in-fetching"></a>
-## ores_prediction.ipynb Problems in fetching.
+<!-- TOC --><a name="problems-in-fetching-api-requests-ores_predictionipynb"></a>
+## Problems in fetching API requests: ores_prediction.ipynb
 
-Certainly! Initially, I encountered numerous failures while making API requests to ORES for obtaining article quality scores. These failures were primarily due to HTTP errors such as 502, 504, and 429 (Too Many Requests). To counter these issues and ensure the reliability of the data retrieval process, I implemented a retry mechanism within the request_ores_score_per_article function.
+Initially, I encountered numerous failures while making API requests to ORES for obtaining article quality scores. These failures were primarily due to HTTP errors such as 502, 504, and 429 (Too Many Requests). To counter these issues and ensure the reliability of the data retrieval process, I implemented a retry mechanism within the request_ores_score_per_article function.
 
 The retry mechanism was designed to allow the function to make several attempts in case of a failed request. It was implemented using a while loop that tracked the number of retries attempted. Each time a failure occurred, the function waited for an increasing duration before making the next attempt. The waiting time followed an exponential backoff strategy, starting with a base wait time of 1 second and doubling with each subsequent retry.
 
@@ -433,5 +434,6 @@ Among the encountered failures, three specific titles consistently resulted in A
 Due to the persistent API failures for the specific titles "Jennings, Missouri," "Jefferson Township, Greene County, Pennsylvania," and "Alma, Wisconsin," it was necessary to manually add these titles to the list for subsequent data retrieval attempts. By adding these titles manually, it was possible to ensure that the article quality scores were obtained, despite the challenges presented by these particular entries. This manual intervention enabled the comprehensive collection of data for the overall analysis, ensuring that the information for these specific titles was included in the final dataset for further examination and processing.
 
 
-
-
+<!-- TOC --><a name="problem-with-data-and-preprocessing-it-data_preprocessingipynb"></a>
+## Problem with data and preprocessing it: data_preprocessing.ipynb
+We also had to preprocess the data because it contained various titles that were not based on city names. In the initial dataset, there were entries with titles that were not relevant to the analysis, including titles such as "2020 United States census," "County (United States)," "Population," and others. These entries needed to be filtered out to focus on the core data of interest, which primarily consisted of city names and their associated states. To achieve this, we applied a cleaning function that not only removed leading and trailing whitespaces but also checked if the title contained a US state. If a title was not associated with a US state, it was marked as 'None' and subsequently filtered out. Some exceptions were made for known cities that did not contain state names but were still pertinent to the analysis. This preprocessing step was crucial to ensure that the dataset contained only relevant, city-based information, making it suitable for further analysis and study.
