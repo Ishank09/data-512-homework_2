@@ -25,10 +25,7 @@
       + [wiki_page_info.csv](#wiki_page_infocsv)
       + [ores_predictions.csv](#ores_predictionscsv)
       + [US States by Region - US Census Bureau.xlsx](#us-states-by-region-us-census-bureauxlsx)
-   * [wp_scored_city_articles_by_state.csv](#wp_scored_city_articles_by_statecsv)
-      + [Dataset Description](#dataset-description)
-      + [Usage](#usage)
-      + [Example](#example)
+      + [wp_scored_city_articles_by_state.csv](#wp_scored_city_articles_by_statecsv)
 - [ores_prediction.ipynb Problems in fetching.](#ores_predictionipynb-problems-in-fetching)
 
 <!-- TOC end -->
@@ -345,7 +342,7 @@ A snippet of the data from the file 'US States by Region - US Census Bureau.xlsx
 
 
 <!-- TOC --><a name="wp_scored_city_articles_by_statecsv"></a>
-## wp_scored_city_articles_by_state.csv
+### wp_scored_city_articles_by_state.csv
 Wikipedia Scored City Articles by State Dataset 
 
 This dataset presents information about Wikipedia articles related to cities, along with their respective scores and additional data points. The file 'wp_scored_city_articles_by_state.csv' includes the following columns:
@@ -357,16 +354,13 @@ This dataset presents information about Wikipedia articles related to cities, al
 - Article_Quality: The quality score assigned to the Wikipedia article.
 - Population: The population of the corresponding geographic area.
 
-<!-- TOC --><a name="dataset-description"></a>
-### Dataset Description
+Dataset Description
 The dataset provides insights into Wikipedia articles related to cities, including their quality scores, geographic area, and population. It aims to offer a comprehensive overview of various cities in different states and their respective Wikipedia article quality.
 
-<!-- TOC --><a name="usage"></a>
-### Usage
+Usage
 You can utilize this dataset to analyze Wikipedia articles related to cities and their quality scores. The Article_Quality column can be particularly useful for understanding the quality assessment of the Wikipedia articles, while the Population column can provide context about the population of the corresponding geographic areas.
 
-<!-- TOC --><a name="example"></a>
-### Example
+Example
 
 A snippet of the data from the file 'wp_scored_city_articles_by_state.csv' is provided below:
 
@@ -381,7 +375,9 @@ Feel free to explore the dataset and use it for various analytical purposes rela
 
 
 <!-- TOC --><a name="ores_predictionipynb-problems-in-fetching"></a>
-# ores_prediction.ipynb Problems in fetching.
+# Research Implications
+
+## ores_prediction.ipynb Problems in fetching.
 
 Certainly! Initially, I encountered numerous failures while making API requests to ORES for obtaining article quality scores. These failures were primarily due to HTTP errors such as 502, 504, and 429 (Too Many Requests). To counter these issues and ensure the reliability of the data retrieval process, I implemented a retry mechanism within the request_ores_score_per_article function.
 
