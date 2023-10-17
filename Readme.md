@@ -1,14 +1,55 @@
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+
+- [Wikipedia ORES API Data Retrieval](#wikipedia-ores-api-data-retrieval)
+   * [Introduction](#introduction)
+   * [Prerequisites](#prerequisites)
+   * [Folder Structure](#folder-structure)
+   * [Steps and files (1-1 mapping)](#steps-and-files-1-1-mapping)
+      + [Step 1: Data Extraction from Wikipedia API](#step-1-data-extraction-from-wikipedia-api)
+      + [Step 2: ORES API Prediction](#step-2-ores-api-prediction)
+      + [Step 3: Data preprocessing](#step-3-data-preprocessing)
+      + [Step 4: Data Merging](#step-4-data-merging)
+      + [Step 5: Analysis](#step-5-analysis)
+   * [Results](#results)
+      + [Section 4a: Total Articles per Population by State](#section-4a-total-articles-per-population-by-state)
+      + [Section 4b: High-Quality Articles per Population](#section-4b-high-quality-articles-per-population)
+      + [Section 5: Results](#section-5-results)
+      + [Top 10 US states by coverage:](#top-10-us-states-by-coverage)
+      + [Bottom 10 US states by coverage:](#bottom-10-us-states-by-coverage)
+      + [Top 10 US states by high quality:](#top-10-us-states-by-high-quality)
+      + [Bottom 10 US states by high quality:](#bottom-10-us-states-by-high-quality)
+      + [Census divisions by total coverage:](#census-divisions-by-total-coverage)
+      + [Census divisions by high quality coverage:](#census-divisions-by-high-quality-coverage)
+   * [Data:](#data)
+      + [us_cities_by_state_SEPT.2023.csv'](#us_cities_by_state_sept2023csv)
+      + [wiki_page_info.csv](#wiki_page_infocsv)
+      + [ores_predictions.csv](#ores_predictionscsv)
+      + [US States by Region - US Census Bureau.xlsx](#us-states-by-region-us-census-bureauxlsx)
+   * [wp_scored_city_articles_by_state.csv](#wp_scored_city_articles_by_statecsv)
+      + [Dataset Description](#dataset-description)
+      + [Usage](#usage)
+      + [Example](#example)
+- [ores_prediction.ipynb Problems in fetching.](#ores_predictionipynb-problems-in-fetching)
+
+<!-- TOC end -->
+
+<!-- TOC --><a name="wikipedia-ores-api-data-retrieval"></a>
 # Wikipedia ORES API Data Retrieval
 
+
+
+<!-- TOC --><a name="introduction"></a>
 ## Introduction
 This project involves retrieving data from the Wikipedia API and utilizing the ORES (Objective Revision Evaluation Service) machine learning tool to obtain quality predictions for articles. The project is divided into several steps, each described in detail below.
 
+<!-- TOC --><a name="prerequisites"></a>
 ## Prerequisites
 Before running the code, ensure that you have the necessary packages installed. You can install the required packages using the following command:
 
 pip install -r requirements.txt
 
 
+<!-- TOC --><a name="folder-structure"></a>
 ## Folder Structure
 
 This project is organized with the following folder structure:
@@ -28,8 +69,10 @@ This project is organized with the following folder structure:
 
 
 
+<!-- TOC --><a name="steps-and-files-1-1-mapping"></a>
 ## Steps and files (1-1 mapping)
 
+<!-- TOC --><a name="step-1-data-extraction-from-wikipedia-api"></a>
 ### Step 1: Data Extraction from Wikipedia API
 Source: data_extraction.ipynb
 
@@ -42,6 +85,7 @@ Source: data_extraction.ipynb
 Note: The full code details and implementation can be found in the data_extraction.ipynb notebook.
 
 
+<!-- TOC --><a name="step-2-ores-api-prediction"></a>
 ### Step 2: ORES API Prediction
 Source: ores_prediction.ipynb
 
@@ -53,6 +97,7 @@ Source: ores_prediction.ipynb
 Note: The full code details and implementation can be found in the ores_prediction.ipynb notebook.
 
 
+<!-- TOC --><a name="step-3-data-preprocessing"></a>
 ### Step 3: Data preprocessing
 Source: data_preprocessing.ipynb
 
@@ -63,6 +108,7 @@ Source: data_preprocessing.ipynb
 Note: The full code details and implementation can be found in the data_preprocessing.ipynb notebook.
 
 
+<!-- TOC --><a name="step-4-data-merging"></a>
 ### Step 4: Data Merging
 Source: data_merging.ipynb
 1. Data Reading: Importing three datasets, namely 'cleaned_data.csv', 'us_cities_by_state_SEPT.2023.csv', and 'US States by Region - US Census Bureau.xlsx', containing information about ORES predictions, US cities, and US state divisions, respectively.
@@ -74,6 +120,7 @@ Source: data_merging.ipynb
 7. Saving the Merged Dataset: Exporting the merged dataframe to 'wp_scored_city_articles_by_state.csv' to create a consolidated dataset containing US state divisions, regional details, population, Wikipedia article information, and ORES predictions.
 Note: The full code details and implementation can be found in the data_merging.ipynb notebook.
 
+<!-- TOC --><a name="step-5-analysis"></a>
 ### Step 5: Analysis
 Source: data_analysis.ipynb
 1. Import the necessary libraries such as pandas and numpy.
@@ -87,7 +134,9 @@ Source: data_analysis.ipynb
 
 
 
+<!-- TOC --><a name="results"></a>
 ## Results
+<!-- TOC --><a name="section-4a-total-articles-per-population-by-state"></a>
 ### Section 4a: Total Articles per Population by State
 The top 5 US states by articles per capita are:
 	1. Vermont: 0.000091
@@ -95,6 +144,7 @@ The top 5 US states by articles per capita are:
 	3. Iowa: 0.000012
 	4. Alaska: 0.000164
 	5. Pennsylvania: 0.000012
+<!-- TOC --><a name="section-4b-high-quality-articles-per-population"></a>
 ### Section 4b: High-Quality Articles per Population
 By State (Top 5):
 
@@ -112,7 +162,9 @@ By Regional Division (Top 5):
 	4. East South Central: 0.000017
 	5. East North Central: 0.000013
 
+<!-- TOC --><a name="section-5-results"></a>
 ### Section 5: Results
+<!-- TOC --><a name="top-10-us-states-by-coverage"></a>
 ### Top 10 US states by coverage:
 	1. Vermont
 	2. Maine
@@ -124,6 +176,7 @@ By Regional Division (Top 5):
 	8. Arkansas
 	9. Missouri
 	10. Minnesota
+<!-- TOC --><a name="bottom-10-us-states-by-coverage"></a>
 ### Bottom 10 US states by coverage:
 	1. Nevada
 	2. California
@@ -136,6 +189,7 @@ By Regional Division (Top 5):
 	9. Wisconsin
 	10. Washington
 
+<!-- TOC --><a name="top-10-us-states-by-high-quality"></a>
 ### Top 10 US states by high quality:
 	1. Vermont
 	2. Wyoming
@@ -148,6 +202,7 @@ By Regional Division (Top 5):
 	9. Maine
 	10. Minnesota
 
+<!-- TOC --><a name="bottom-10-us-states-by-high-quality"></a>
 ### Bottom 10 US states by high quality:
 	1. Virginia
 	2. Nevada
@@ -160,6 +215,7 @@ By Regional Division (Top 5):
 	9. Massachusetts
 	10. Louisiana
 
+<!-- TOC --><a name="census-divisions-by-total-coverage"></a>
 ### Census divisions by total coverage:
 	1. Middle Atlantic
 	2. West North Central
@@ -170,6 +226,7 @@ By Regional Division (Top 5):
 	7. Mountain
 	8. Pacific
 	9. South Atlantic
+<!-- TOC --><a name="census-divisions-by-high-quality-coverage"></a>
 ### Census divisions by high quality coverage:
 	1. Middle Atlantic
 	2. West North Central
@@ -183,8 +240,10 @@ By Regional Division (Top 5):
 These results provide insights into the distribution of Wikipedia articles and their quality across different US states and census divisions
 
 
+<!-- TOC --><a name="data"></a>
 ## Data:
 
+<!-- TOC --><a name="us_cities_by_state_sept2023csv"></a>
 ### us_cities_by_state_SEPT.2023.csv'
 US Cities Dataset 
 
@@ -208,6 +267,7 @@ A snippet of the data from the file 'us_cities_by_state_SEPT.2023.csv' is provid
 | Alabama  | Adamsville, Alabama     | [Link](https://en.wikipedia.org/wiki/Adamsville,_Alabama)       |
 | ...      | ...                     | ...                                             |
 
+<!-- TOC --><a name="wiki_page_infocsv"></a>
 ### wiki_page_info.csv
 Wikipedia Page Information Dataset 
 
@@ -231,6 +291,7 @@ A snippet of the data from the file 'wiki_page_info.csv' is provided below:
 | Adamsville, Alabama | 1177621427       |
 | ...                 | ...              |
 
+<!-- TOC --><a name="ores_predictionscsv"></a>
 ### ores_predictions.csv
 ORES Predictions Dataset 
 
@@ -257,6 +318,7 @@ A snippet of the data from the file 'ores_predictions.csv' is provided below:
 
 
 
+<!-- TOC --><a name="us-states-by-region-us-census-bureauxlsx"></a>
 ### US States by Region - US Census Bureau.xlsx
 US States by Region Dataset - US Census Bureau 
 
@@ -282,6 +344,7 @@ A snippet of the data from the file 'US States by Region - US Census Bureau.xlsx
 | ...              | ...                 | ...            |
 
 
+<!-- TOC --><a name="wp_scored_city_articles_by_statecsv"></a>
 ## wp_scored_city_articles_by_state.csv
 Wikipedia Scored City Articles by State Dataset 
 
@@ -294,12 +357,15 @@ This dataset presents information about Wikipedia articles related to cities, al
 - Article_Quality: The quality score assigned to the Wikipedia article.
 - Population: The population of the corresponding geographic area.
 
+<!-- TOC --><a name="dataset-description"></a>
 ### Dataset Description
 The dataset provides insights into Wikipedia articles related to cities, including their quality scores, geographic area, and population. It aims to offer a comprehensive overview of various cities in different states and their respective Wikipedia article quality.
 
+<!-- TOC --><a name="usage"></a>
 ### Usage
 You can utilize this dataset to analyze Wikipedia articles related to cities and their quality scores. The Article_Quality column can be particularly useful for understanding the quality assessment of the Wikipedia articles, while the Population column can provide context about the population of the corresponding geographic areas.
 
+<!-- TOC --><a name="example"></a>
 ### Example
 
 A snippet of the data from the file 'wp_scored_city_articles_by_state.csv' is provided below:
@@ -314,6 +380,7 @@ Feel free to explore the dataset and use it for various analytical purposes rela
 
 
 
+<!-- TOC --><a name="ores_predictionipynb-problems-in-fetching"></a>
 # ores_prediction.ipynb Problems in fetching.
 
 Certainly! Initially, I encountered numerous failures while making API requests to ORES for obtaining article quality scores. These failures were primarily due to HTTP errors such as 502, 504, and 429 (Too Many Requests). To counter these issues and ensure the reliability of the data retrieval process, I implemented a retry mechanism within the request_ores_score_per_article function.
